@@ -1,0 +1,42 @@
+ body{
+    background-color: black;
+
+}
+/* h1{
+    color: white;
+    display: inline-block;
+    width: 100px;
+    background-color: white;
+    color: black;
+}  */
+.headingtop {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.formid {
+    border: 10px solid  white;
+   
+    padding: 55px 5px 70px 5px;
+    font-size: 50px;
+    margin: 10px 300px 10px 390px;
+
+    color: white;
+    background: black;
+    border-radius: 50%;
+    width: 320px;
+    height: 220px;
+
+   
+  text-align: center;
+  
+
+}
+.buttonss{
+    text-align: center;
+
+}
+
+

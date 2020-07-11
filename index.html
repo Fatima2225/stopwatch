@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="headingtop">
+                    <h1>
+                        STOP WATCH
+                    </h1>
+                </div>
+            </div>
+
+
+            <div class="col-12">
+
+                <div class="formid">
+                    <div>
+                        <span id="min"> 00 </span>
+                        <span id="sec"> 00 </span>
+                        <span id="msec"> 00 </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class=" buttonss">
+                    <button onclick="start()" id="new" class="btn btn-success">Start</button>
+                    <button onclick="stop()" class="btn btn-danger">Stop</button>
+                    <button onclick="reset()" class="btn btn-warning">Reset</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- javascript -->
+    <script>
+        var min = 00;
+        var sec = 00;
+        var msec = 00;
+        var minHeading = document.getElementById("min");
+        var secHeading = document.getElementById("sec");
+        var msecHeading = document.getElementById("msec");
+        var interval;
+
+        function timer() {
+            msec++
+            msecHeading.innerHTML = msec;
+            if (msec >= 100) {
+                sec++
+                secHeading.innerHTML = sec
+                msec = 00;
+
+            } else if (sec >= 60) {
+                min++
+                minHeading.innerHTML = min
+                sec = 00
+            }
+        }
+
+
+        function start() {
+            // clearInterval(interval)
+            interval = setInterval(timer, 10)
+            document.getElementById("new").disabled = true;
+
+
+        }
+
+        function stop() {
+            clearInterval(interval)
+            document.getElementById("new").disabled = false;
+        }
+
+        function reset() {
+            min = 00;
+            sec = 00;
+            msec = 00;
+            minHeading.innerHTML = min
+            secHeading.innerHTML = sec
+            msecHeading.innerHTML = msec
+            stop()
+        }
+    </script>
+
+</body>
+
+</html>
